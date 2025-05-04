@@ -21,7 +21,7 @@ def get_numbers_ticket(min, max, quantity):
 
     if has_error:
         print()
-        return None
+        return []
 
     return sorted(random.sample(range(min, max + 1), quantity))
 
@@ -33,8 +33,10 @@ while True:
        
 
         lottery_numbers = get_numbers_ticket(min_number, max_number, quantity_number)
-        if lottery_numbers != None:
+        if lottery_numbers:
             print(f"\nYour lottery numbers: {lottery_numbers}")
             break
+        else:
+            print("Please try again!")
     except ValueError:
         print("Error! Please enter a number!\n")

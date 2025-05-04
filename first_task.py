@@ -5,7 +5,8 @@ def get_days_from_today(date):
         date_string = datetime.strptime(date, "%Y-%m-%d").date()
         now = datetime.now().date()
         days_difference = now - date_string
-        return days_difference
+        number_of_days = days_difference.days
+        return number_of_days
     except ValueError:
         print("Error! Please enter the date in the format \"YYYY-MM-DD\"!\n")
         return None
@@ -15,6 +16,5 @@ while True:
 
     count_days = get_days_from_today(user_input)
     if count_days != None:
-        print(f"Number of days from a given date to the current one: {count_days.days}")
+        print(f"Number of days from a given date to the current one: {count_days}")
         break
-        
